@@ -1,0 +1,59 @@
+
+   
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badly Explained Movies
+    </title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container text-center mt-5">
+
+      <div class="card bg-light">
+        <div class="card-body">
+          <h5 class="card-title">Badly Explained Movies</h5>
+          <hr>
+          <div id="description" class="text-center"></div>
+          <hr>
+
+          
+            <div class="input-group mb-3">
+              <input
+                id="guess"
+                type="text"
+                placeholder="Enter Guess"
+                class="form-control"
+                aria-label="Amount (to the nearest dollar)"
+              />
+            </div>
+
+            <div class="d-grid gap-2 mt-2">
+              <button id="submit" type="button" class="btn btn-primary">Submit</button>
+            </div>
+    
+
+            <div class="d-grid gap-2 mt-4 mb-4">
+                <button id="hintbtn" type="button" class="btn btn-primary bg-secondary">Show Hint</button>
+            </div>
+
+            <div id="hint" class="card mt-3 p-2 hide"></div>
+
+        <div id="output" class="card mt-3 p-2 hide">Test Output</div> 
+        </div>
+      </div>
+    </div> 
+
+     <script src="script.js"></script>
+</body>
+
+</html>

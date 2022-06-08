@@ -3,11 +3,11 @@ class Task {
         this.newTask = newTask;
     }
 
-    // static fromJSON(json) {
-    //     return new Task(
-    //         json.newTask
-    //     );
-    // }
+    static fromJSON(json) {
+        return new Task(
+            json.newTask
+        );
+    }
 }
 
 class UI{
@@ -21,8 +21,10 @@ class UI{
 
         this.tasks = [];
         this.form.addEventListener('submit', (e)=> this.onFormSubmit(e));
+        
+        this.loadFromLocalStorage();
         this.renderTable();
-        //this.loadFromLocalStorage();
+        
 
     }
 
@@ -39,7 +41,7 @@ class UI{
 
         this.input.value = "";
 
-        //this.saveToLocalStorage();
+        this.saveToLocalStorage();
     }
 
     renderTable() {
@@ -106,23 +108,23 @@ class UI{
         });
 
         this.renderTable();
-        //this.saveToLocalStorage();
+        this.saveToLocalStorage();
     }
 
-    // saveToLocalStorage(){
-    //     const json = JSON.stringify(this.tasks);
-    //     localStorage.setItem("tasks", json);
+    saveToLocalStorage(){
+        const json = JSON.stringify(this.tasks);
+        localStorage.setItem("tasks", json);
 
-    //     console.log("Is working");
-    // }
+        console.log("Is working");
+    }
 
-    // loadFromLocalStorage(){
-    //     const json = localStorage.getItem("tasks");
-    //     if(json){
-    //         const taskArr = JSON.parse(json);
-    //         this.tasks = taskArr.map(x => Task.fromJSON(x));
-    //     }
-    // }
+    loadFromLocalStorage(){
+        const json = localStorage.getItem("tasks");
+        if(json){
+            const taskArr = JSON.parse(json);
+            this.tasks = taskArr.map(x => Task.fromJSON(x));
+        }
+    }
 }
 
 const ui = new UI();
